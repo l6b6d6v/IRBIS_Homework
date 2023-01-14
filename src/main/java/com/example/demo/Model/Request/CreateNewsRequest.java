@@ -5,8 +5,8 @@ import lombok.experimental.Accessors;
 
 @Data
 @Accessors(chain = true)
-public class NewsRequest {
-    private String street;
-    private String city;
-    private String building;
+public class CreateNewsRequest {
+    private String News;
+    private String NewsSubject;
+    private String NewsSource;
 }

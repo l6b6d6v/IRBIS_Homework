@@ -1,13 +1,11 @@
 package com.example.demo.Domain;
 
-
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
-import org.hibernate.annotations.Table;
 
-import java.util.UUID;
+import java.util.Objects;
 
 @Getter
 @Setter
@@ -15,44 +13,42 @@ import java.util.UUID;
 @Entity
 @Table(name = "news")
 public class News {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID _idNews;
+    private Integer id;
 
     //Источник новости
     @Column(name = "source_news")
-    private String _newsSource;
+    private String newsSource;
 
     //Тема новости
     @Column(name = "subject_news")
-    private String _newsSubject;
+    private String newsSubject;
 
     //Новость
     @Column(name = "news")
-    private String _news;
-
+    private String news;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         News news = (News) o;
-        return _news.equals(news._news) && _newsSubject.equals(news._newsSubject) && _newsSource.equals(news._newsSource);
+        return this.news.equals(news.news) && newsSubject.equals(news.newsSubject) && newsSource.equals(news.newsSource);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(_news, _newsSubject, _newsSource);
+        return Objects.hash(news, newsSubject, newsSource);
     }
 
     @Override
     public String toString() {
         return "News{" +
-                "id=" + _idNews +
-                ", Источник='" + _newsSource + '\'' +
-                ", Тематика='" + _newsSubject + '\'' +
-                ", Новость='" + _news + '\'' +
+                "id=" + id +
+                ", Источник='" + newsSource + '\'' +
+                ", Тематика='" + newsSubject + '\'' +
+                ", Новость='" + news + '\'' +
                 '}';
     }
 }

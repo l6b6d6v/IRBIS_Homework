@@ -13,13 +13,27 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-postgresql'
+	implementation 'org.springframework.boot:spring-boot'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.projectlombok:lombok:1.18.18'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation "org.postgresql:postgresql"
+	implementation 'org.projectlombok:lombok:1.18.18'
+	implementation 'org.jetbrains:annotations:20.1.0'
+
+	compileOnly 'org.projectlombok:lombok:1.18.24'
+	annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.boot:spring-boot'
+	testImplementation 'org.springframework.boot:spring-boot-starter-validation'
+	testImplementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	testImplementation "org.postgresql:postgresql"
+	testImplementation 'org.projectlombok:lombok:1.18.18'
+	testImplementation 'org.jetbrains:annotations:20.1.0'
 }
 
 tasks.named('test') {
