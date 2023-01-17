@@ -12,7 +12,7 @@ import java.util.List;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
-@RequestMapping("/api/news")
+@RequestMapping("/news")
 @RequiredArgsConstructor
 public class NewsController {
     private final NewsService newsService;

@@ -12,30 +12,40 @@ repositories {
 	mavenCentral()
 }
 
+ext {
+	set('testcontainersVersion', "1.17.6")
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot'
-	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation "org.postgresql:postgresql"
-	implementation 'org.projectlombok:lombok:1.18.18'
 	implementation 'org.jetbrains:annotations:20.1.0'
+	implementation 'io.jsonwebtoken:jjwt:0.9.1'
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+	implementation 'io.jsonwebtoken:jjwt-impl:0.11.5'
+	implementation 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+	implementation 'jakarta.xml.bind:jakarta.xml.bind-api:2.3.3'
 
 	compileOnly 'org.projectlombok:lombok:1.18.24'
 	annotationProcessor 'org.projectlombok:lombok:1.18.24'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.boot:spring-boot'
-	testImplementation 'org.springframework.boot:spring-boot-starter-validation'
-	testImplementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	testImplementation "org.postgresql:postgresql"
-	testImplementation 'org.projectlombok:lombok:1.18.18'
-	testImplementation 'org.jetbrains:annotations:20.1.0'
+	//testImplementation 'org.springframework.boot:spring-boot'
+	//testImplementation 'org.springframework.boot:spring-boot-starter'
+	//testImplementation 'org.springframework.boot:spring-boot-starter-web'
+	//testImplementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	//testImplementation 'org.springframework.security:spring-security-test'
+	//testImplementation 'org.springframework.boot:spring-boot-starter-validation'
+	//testImplementation "org.postgresql:postgresql"
+	//testImplementation 'org.jetbrains:annotations:20.1.0'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
