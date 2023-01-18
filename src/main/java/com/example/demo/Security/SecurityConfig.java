@@ -24,7 +24,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         return http
-         /*       .anonymous(AbstractHttpConfigurer::disable)         // AnonymousAuthenticationFilter
+                .anonymous(AbstractHttpConfigurer::disable)         // AnonymousAuthenticationFilter
                 .csrf(AbstractHttpConfigurer::disable)              // CsrfFilter
                 .sessionManagement(AbstractHttpConfigurer::disable) // DisableEncodeUrlFilter, SessionManagementFilter
                 .exceptionHandling(AbstractHttpConfigurer::disable) // ExceptionTranslationFilter
@@ -32,7 +32,7 @@ public class SecurityConfig {
                 .logout(AbstractHttpConfigurer::disable)            // LogoutFilter
                 .requestCache(AbstractHttpConfigurer::disable)      // RequestCacheAwareFilter
                 .servletApi(AbstractHttpConfigurer::disable)        // SecurityContextHolderAwareRequestFilter
-                .securityContext(AbstractHttpConfigurer::disable)   // SecurityContextPersistenceFilter*/
+                .securityContext(AbstractHttpConfigurer::disable)   // SecurityContextPersistenceFilter
                 .build();
 
 

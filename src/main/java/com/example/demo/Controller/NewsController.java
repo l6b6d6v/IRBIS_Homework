@@ -43,8 +43,13 @@ public class NewsController {
         return newsService.findDistinctByNewsSubjectIsNotNull();
     }
 
+    @GetMapping(value = "/all", produces = APPLICATION_JSON_VALUE)
+    public List<NewsResponse> findAll() {
+        return newsService.findAll();
+    }
+
     //API для получения данных из БД (III. Всех)
-    @GetMapping(produces = APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/pageable", produces = APPLICATION_JSON_VALUE)
     public List<NewsResponse> findAll(
             @PageableDefault(
                     size = 3,

@@ -22,6 +22,8 @@ public interface NewsRepository extends JpaRepository<News, Integer> {
     List<News> findDistinctByNewsSubjectIsNotNull();
 
     Page<News> findAllByNewsSource(String newsSource, Pageable pageable);
+    List<News> findAllByNewsSource(String newsSource);
+
     Page<News> findByNewsSubject(String newsSubject, Pageable pageable);
 
     //List<News> findNewsByNewsSource(String newsSource);
