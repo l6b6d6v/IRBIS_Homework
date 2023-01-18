@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+  postgres:
+    image: 'postgres'
+    restart: always
+    container_name: 'java-postgres'
+    ports:
+      - 5432:5432
+    volumes:
+    - ./pg_data:/var/lib/postgresql/data/pgdata
+    environment:
+      - POSTGRES_USER: postgres
+      - POSTGRES_HOST_AUTH_METHOD: trust
+      - POSTGRES_DB: irbisnews
+      - PGDATA: /var/lib/postgresql/data/pgdata
+
+  app:
+    build: ./
+    container_name: 'java-app'
+    ports:
+    - 8080:8080
