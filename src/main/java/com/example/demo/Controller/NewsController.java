@@ -77,9 +77,7 @@ public class NewsController {
             size = 3,
             sort = {"id"},
             direction = Sort.Direction.DESC
-    ) Pageable page
-    ) {
-        page = PageRequest.of(0, 3);
+    ) Pageable page) {
         return newsService.findByNewsSubject(newsSubject, page);
     }
 
